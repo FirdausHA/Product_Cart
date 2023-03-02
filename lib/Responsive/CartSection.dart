@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 import 'package:example_cart/Model_product/Watch_model.dart';
 import 'package:example_cart/controllers/cart_controller.dart';
 import 'package:flutter/material.dart';
@@ -5,8 +7,8 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 
-class CartPage extends StatelessWidget {
-  CartPage({super.key});
+class CartSection extends StatelessWidget {
+  CartSection({super.key});
   final counterC = Get.put(CartController());
   final CartController controller = Get.find();
 
@@ -86,9 +88,11 @@ class CartPage extends StatelessWidget {
                             ],
                           ),
                         ),
-                        ElevatedButton(
-                            style: ElevatedButton.styleFrom(primary: Color(0xfffdd691), ),
-                            onPressed: () {controller.payment();}, child: Container(height: 50,width: MediaQuery.of(context).size.width,
+                        Container(
+                          margin: EdgeInsets.only(bottom: 10),
+                          child: ElevatedButton(
+                              style: ElevatedButton.styleFrom(primary: Color(0xfffdd691), ),
+                              onPressed: () {controller.payment();}, child: Container(width: MediaQuery.of(context).size.width,
                             child: Center(
                               child: Text("BUY NOW",
                                 textAlign: TextAlign.center,
@@ -98,6 +102,7 @@ class CartPage extends StatelessWidget {
                                     fontWeight: FontWeight.bold),
                               ),
                             ),)),
+                        ),
                       ],
                     )
                 ),

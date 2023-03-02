@@ -42,109 +42,109 @@ class DetailSection extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return Scaffold(
-      body: Column(
+      body: Row(
         children: [
           Container(
-            child: Expanded(
-              child: Stack(
-                alignment: Alignment.center,
-                children: [
-                  Row(
-                    children: [
-                      Expanded(
-                        child: SafeArea(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              IconButton(
-                                icon: Icon(
-                                  Icons.arrow_back,
-                                  color: Color(0xffffda9c),
-                                ),
-                                onPressed: () {
-                                  Navigator.of(context).push(
-                                    MaterialPageRoute(
-                                      builder: (con) => Home(),
-                                    ),
-                                  );
-                                },
+            width: 460,
+            height: MediaQuery.of(context).size.height,
+            child: Stack(
+              alignment: Alignment.center,
+              children: [
+                Row(
+                  children: [
+                    Expanded(
+                      child: SafeArea(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            IconButton(
+                              icon: Icon(
+                                Icons.arrow_back,
+                                color: Color(0xffffda9c),
                               ),
-                              Padding(
-                                padding: EdgeInsets.only(left: 40),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  children: [
-                                    Column(
-                                      crossAxisAlignment:
-                                      CrossAxisAlignment.start,
-                                      children: [
-                                        buildDetailText(
-                                          title: "BRAND",
-                                          subTitle: "BHILFIGERR",
-                                        ),
-                                        buildDetailText(
-                                          title: "STRAP",
-                                          subTitle: "SILICONE",
-                                        ),
-                                        buildDetailText(
-                                          title: "COLOR",
-                                          subTitle: "ROSE GOLD",
-                                        ),
-                                      ],
-                                    )
-                                  ],
-                                ),
-                              )
-                            ],
+                              onPressed: () {
+                                Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                    builder: (con) => Home(),
+                                  ),
+                                );
+                              },
+                            ),
+                            Padding(
+                              padding: EdgeInsets.only(left: 40),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  Column(
+                                    crossAxisAlignment:
+                                    CrossAxisAlignment.start,
+                                    children: [
+                                      buildDetailText(
+                                        title: "BRAND",
+                                        subTitle: "BHILFIGERR",
+                                      ),
+                                      buildDetailText(
+                                        title: "STRAP",
+                                        subTitle: "SILICONE",
+                                      ),
+                                      buildDetailText(
+                                        title: "COLOR",
+                                        subTitle: "ROSE GOLD",
+                                      ),
+                                    ],
+                                  )
+                                ],
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: Container(
+
+                        alignment: Alignment.topRight,
+                        height: double.infinity,
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          color: Color(0xfffdd691),
+                          borderRadius: BorderRadius.only(
+                            bottomLeft: Radius.circular(100),
                           ),
                         ),
                       ),
-                      Expanded(
-                        child: Container(
-                          alignment: Alignment.topRight,
-                          height: double.infinity,
-                          width: double.infinity,
-                          decoration: BoxDecoration(
-                            color: Color(0xfffdd691),
-                            borderRadius: BorderRadius.only(
-                              bottomLeft: Radius.circular(100),
-                            ),
+                    )
+                  ],
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 45),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Image.asset(Product.products[Index].image,
+                        scale: 0.5,
+                      ),
+                      RotatedBox(
+                        quarterTurns: 3,
+                        child: Text(
+                          "TOMMY HILFIGER",
+                          style: TextStyle(
+                            fontSize: 30,
+                            fontWeight: FontWeight.bold,
+                            color: Color(0xffebbb71),
                           ),
                         ),
                       )
                     ],
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 45),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        Image.asset(Product.products[Index].image,
-                          scale: 0.5,
-                        ),
-                        RotatedBox(
-                          quarterTurns: 3,
-                          child: Text(
-                            "TOMMY HILFIGER",
-                            style: TextStyle(
-                              fontSize: 30,
-                              fontWeight: FontWeight.bold,
-                              color: Color(0xffebbb71),
-                            ),
-                          ),
-                        )
-                      ],
-                    ),
-                  )
-                ],
-              ),
+                )
+              ],
             ),
           ),
           Container(
-            color: Colors.black,
+            // color: Colors.black,
             height: MediaQuery.of(context).size.height,
-            width: MediaQuery.of(context).size.width * 0.50,
-            child: Expanded(
+width: 340,            child: Expanded(
               child: Padding(
                 padding: const EdgeInsets.all(40.0),
                 child: Column(
@@ -157,7 +157,7 @@ class DetailSection extends StatelessWidget {
                           Text(
                             "TRENDING PRODUCTS",
                             style: TextStyle(
-                              fontSize: 20,
+                              fontSize: 16,
                               color: Colors.white,
                               fontWeight: FontWeight.bold,
                               fontFamily: "customFont",
@@ -167,7 +167,7 @@ class DetailSection extends StatelessWidget {
                           Text(
                             "PRICE",
                             style: TextStyle(
-                              fontSize: 20,
+                              fontSize: 16,
                               color: Colors.white,
                               fontWeight: FontWeight.bold,
                               fontFamily: "customFont",
@@ -256,6 +256,7 @@ class DetailSection extends StatelessWidget {
               ),
             ),
           ),
+
         ],
       ),
     );
